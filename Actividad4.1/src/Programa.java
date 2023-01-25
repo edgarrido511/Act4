@@ -5,43 +5,45 @@ public class Programa {
 	public static void main(String[] args) {
 		
 		Scanner entrada = new Scanner(System.in);
-		System.out.println("Para cuadrado escoge 1 y para Circulo 2");
-		int seleccion  = entrada.nextInt();
+		System.out.println("Que figura quiere ");
+		String seleccion;
+		int c;
+		seleccion  = entrada.nextLine();
 		Cuadrado a = new Cuadrado();
 		Circulo b = new Circulo();
 		
-		if (seleccion == 1) {
+		if (seleccion.contains ("cuadrado") ) {
 			System.out.println("Que largo desea que tenga el lado del cuadrado)");
-			seleccion = entrada.nextInt();
-			a.camabiaLado(seleccion);
-			System.out.println("Que desa calcular? area(1),perimetro(2),diagonal(3)");
-			seleccion = entrada.nextInt();
-			if(seleccion == 1) {
+			seleccion = entrada.nextLine();
+			c = Integer.parseInt(seleccion);
+			a.camabiaLado(c);
+			System.out.println("Que desa calcular? area, perimetro, diagonal");
+			seleccion = entrada.nextLine();
+			if(seleccion.contains("area")) {
 				System.out.println(a.area());
 			}
-			if(seleccion == 2) {
+			if(seleccion.contains("perimetro")) {
 				System.out.println(a.perimetro());
 			}
-			if(seleccion ==3) {
+			if(seleccion.contains("diagonal")) {
 				System.out.println(a.diagonal());
 			}
 		}
-		if (seleccion == 2) {
+		if (seleccion.contains("circulo")) {
 			System.out.println("Que largo desea que tenga el radio del circulo");
-			seleccion = entrada.nextInt();
-			b.cambiaRadio(seleccion);
-			System.out.println("Que desa calcular? area(1),circunferencia(2),");
-			seleccion = entrada.nextInt();
-			if(seleccion == 1){
+			seleccion = entrada.nextLine();
+			c = Integer.parseInt(seleccion);
+			b.cambiaRadio(c);
+			System.out.println("Que desa calcular? area o circunferencia");
+			seleccion = entrada.nextLine();
+			if(seleccion.contains("area")){
 				System.out.println(b.area());
 			}
-			if (seleccion == 2) {
+			if (seleccion.contains("circunferencia")) {
 				System.out.println(b.circunferencia());
 			}
 		}
-		
-		//entrada.close();
-
+		entrada.close();
 	}
 
 }
