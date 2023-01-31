@@ -1,7 +1,7 @@
 
 public class Circulo {
 	
-	double radio;
+	double radio = 177808;
 	double area;
 	double perimetro;
 
